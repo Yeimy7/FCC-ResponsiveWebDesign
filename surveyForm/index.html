@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>SurveyForm</title>
+</head>
+
+<body>
+    <h1 id="title">Survey Form</h1>
+    <p id="description">Thank you for taking the time to fill out this form.</p>
+    <div class="container">
+
+        <form action="" id="survey-form">
+            <label for="name" id="name-label">Name:</label>
+            <input type="text" name="name" id="name" placeholder="Enter your name" required><br>
+            <label for="email" id="email-label">Email:</label>
+            <input type="email" name="email" id="email" placeholder="Enter your email" required
+                pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"><br>
+            <label for="number" id="number-label">Age:</label>
+            <input type="number" name="number" id="number" placeholder="Age" pattern="[0-9]*" min="5" max="120"><br>
+
+            <p>What department of Bolivia are you from?</p>
+
+                <select id="dropdown" required>
+                    <option disabled selected value>Select your department</option>
+                    <option value="lp">La Paz</option>
+                    <option value="cb">Cochabamba</option>
+                    <option value="sc">Santa Cruz</option>
+                    <option value="tj">Tarija</option>
+                    <option value="ch">Chuquisaca</option>
+                    <option value="pt">Potosí</option>
+                    <option value="or">Oruro</option>
+                    <option value="be">Beni</option>
+                    <option value="pd">Pando</option>
+                    <option value="other">Other</option>
+                </select>
+
+            <p>Which framework / library do you prefer?</p>
+            <label>
+                <input name="framework" value="angular" type="radio" checked />Angular</label>
+            <label>
+                <input name="framework" value="react" type="radio" />React</label>
+
+            <label><input name="framework" value="vue" type="radio" />Vue</label>
+
+            <p>What kinds of technologies are you interested in?</p>
+
+            <label>
+                <input name="tecno" value="frontend" type="checkbox" class="input-checkbox" />
+                Front-end
+            </label>
+            <label>
+                <input name="tecno" value="backend" type="checkbox" class="input-checkbox" />
+                Back-end
+            </label>
+            <label>
+                <input name="tecno" value="data" type="checkbox" class="input-checkbox" />
+                Data Science
+            </label>
+            <label>
+                <input name="tecno" value="game" type="checkbox" class="input-checkbox" />
+                Games development
+            </label>
+            <p>Any comments?</p>
+            <textarea name="commnet" id=""  placeholder="Enter your comment here..."></textarea><br>
+
+            <input type="submit" value="Submit" id="submit">
+
+        </form>
+    </div>
+</body>
+
+</html>
