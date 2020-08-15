@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarala&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+hr {
+    width: 80%;
+    margin: -10px 16%;
+    /* border-style: dashed; */
+    border: 1px dashed gray
+}
+
+#navbar {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    font-family: 'Sarala', sans-serif;
+    transform: scaleY(1.2);
+    background-color: white;
+}
+
+#navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+#navbar a {
+    display: block;
+    padding: 28px;
+    font-size: 16px;
+    font-weight: normal;
+    color: #333;
+}
+
+#welcome-section {
+    width: 90%;
+    height: 100vh;
+    margin: 0px auto;
+    border-right: 1px dashed #333;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    padding: 20px;
+    font-family: 'Sarala', sans-serif;
+    color: rgb(153, 152, 152);
+    letter-spacing: 5px;
+}
+
+.figure {
+    width: 200px;
+    height: 200px;
+    background-color: #e3f86b;
+    z-index: 25;
+    align-self: start;
+    top: 50px;
+    clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+}
+
+.title {
+    text-transform: uppercase;
+    font-size: 17px;
+    padding: 20px;
+    margin-right: 20px;
+}
+
+.title span {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.title .center {
+    text-align: center;
+}
+
+.title .right {
+    text-align: right;
+}
+
+.photography {
+    width: 280px;
+    height: 450px;
+    border: 5px solid #DEE01A;
+    box-shadow: 0px 2px 2px gray;
+    background-image: url('./img/Yeim.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.dates {
+    font-size: 14px;
+    align-self: flex-end;
+    margin-bottom: 50px;
+    margin-left: 50px;
+}
+
+.my-name {
+    text-decoration: line-through;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.dates span {
+    display: block;
+}
+
+.dates .resalt {
+    width: 115px;
+    background-color: #333;
+    color: white;
+    margin-bottom: 2px;
+    padding: 2px;
+}
+
+.projects {
+    width: 100%;
+    height: 100vh;
+    padding: 50px 50px 5px;
+}
+
+.projects h2 {
+    margin-top: 40px;
+    font-family: 'Lato', serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.projects-container {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.projects-container a {
+    display: inline-block;
+    width: 300px;
+    height: 400px;
+    transition: .3s;
+}
+
+.projects-container a:hover {
+    transform: scale(1.1);
+    transition: .4s;
+}
+
+.projects-container img {
+    border-radius: 4px;
+    box-shadow: 0px 2px 5px gray;
+    width: 100%;
+    height: 100%;
+}
+
+.contact {
+    width: 100%;
+    height: 100vh;
+    background-color: #222222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contact h2 {
+    font-family: 'Lato', serif;
+    background-color: #e3f86b;
+    padding: 10px;
+    font-weight: 300;
+    font-size: 60px;
+}
+
+.contact .icons {
+    display: inline-block;
+    margin-top: 50px;
+}
+
+.contact .icons a {
+    color: white;
+    font-size: 100px;
+    margin-left: 50px;
+}
+
+.contact .icons a i {
+    transition: .3s;
+}
+
+.contact .icons a i:hover {
+    transform: scale(1.2);
+    transition: .3s;
+}
+
+footer {
+    background-color: #e3f86b;
+    color: #333;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-family: 'Lato', serif;
+    transform: scaleY(1.2);
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    text-decoration: none;
+    color: #333;
+}
+
+footer span {
+    color: crimson;
+}
+
+@media (max-width:768px) {
+    #welcome-section {
+        width: 95%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        align-items: center;
+        padding: 15px;
+    }
+    .figure {
+        width: 100px;
+        height: 100px;
+    }
+    .photography {
+        width: 220px;
+        height: 300px;
+        margin-top: 20px;
+    }
+    .dates {
+        font-size: 14px;
+        align-self: flex-end;
+        margin-bottom: 50px;
+        margin-left: 50px;
+    }
+    .projects h2 {
+        margin-top: 5px;
+        margin-bottom: 30px;
+    }
+    .projects-container {
+        width: 100%;
+        height: 70%;
+    }
+    .projects-container a {
+        display: inline-block;
+        width: 200px;
+        height: 300px;
+        transition: .3s;
+    }
+    .contact h2 {
+        font-size: 40px;
+    }
+
+    .contact .icons a {
+        font-size: 80px;
+    }
+}
+
+@media (max-width:425px) {
+    #navbar {
+        justify-content: center;
+    }
+    #navbar a {
+        padding: 15px;
+    }
+    #welcome-section {
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+    }
+    .title span{
+        display: inline;
+        padding: 0;
+        margin: 0;
+    }
+    .title{
+        padding: 0;
+        margin: 0;
+        font-size: 13px;
+        font-weight: lighter;
+        margin-top: 42px;
+    }
+    .figure {
+        display: none;
+    }
+    .photography {
+        position: relative;
+        width: 220px;
+        height: 70%;
+      
+    }
+    .dates {
+        width: 300px;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 5px;
+    }
+    .dates span {
+        display: none;
+    }
+    .dates .resalt {
+        display: inline-block;
+        font-size: 15px;
+        padding: 0;
+        width: 130px;
+        margin-right: -20px;
+    }
+    .my-name {
+        display: block;
+        margin: 5px;
+    }
+    .projects{
+        position: relative;
+        height: auto;
+    }
+    .projects-container {
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+    }
+    .projects-container a {
+        display: block;
+        width: 80%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    .contact{
+        position: relative;
+        height: 80vh;
+    }
+    .contact h2 {
+        font-size: 40px;
+    }
+
+    .contact .icons a {
+        font-size: 80px;
+    }
+}

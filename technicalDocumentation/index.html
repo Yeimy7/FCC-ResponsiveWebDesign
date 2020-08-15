@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Technical Documentation</title>
+</head>
+
+<body>
+    <nav id="navbar">
+        <header>Vue.js</header>
+        <ul>
+            <li>
+                <a href="#What_is_Vuejs" class="nav-link">What is Vue.js?</a>
+            </li>
+            <li>
+                <a href="#Getting_started" class="nav-link">Getting Started</a>
+            </li>
+            <li>
+                <a href="#Declarative_rendering" class="nav-link">Declarative Rendering</a>
+            </li>
+            <li>
+                <a href="#Conditionals_and_loops" class="nav-link">Conditionals and Loops</a>
+            </li>
+            <li>
+                <a href="#Relation_to_custom_elements" class="nav-link">Relation to Custom Elements</a>
+            </li>
+            <li>
+                <a href="#Array_change_detection" class="nav-link">Array Change Detection</a>
+            </li>
+        </ul>
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="What_is_Vuejs">
+            <header>What is Vue.js?</header>
+            <article>
+                <p>
+                    Vue (pronounced /vjuː/, like view) is a progressive framework for building user interfaces. Unlike
+                    other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The
+                    core library is focused on the view layer only, and is easy to pick up and integrate with other
+                    libraries or existing projects. On the other hand, Vue is also perfectly capable of powering
+                    sophisticated Single-Page Applications when used in combination with modern tooling and supporting
+                    libraries.
+                </p>
+
+                
+                <p>
+                    If you'd like to learn more about Vue before diving in, we created a video walking through the core
+                    principles and a sample project.
+                </p>
+                <p>
+                    If you are an experienced frontend developer and want to know how Vue compares to other
+                    libraries/frameworks, check out the Comparison with Other Frameworks.
+                </p>
+            </article>
+        </section>
+        <section class="main-section" id="Getting_started">
+            <header>Getting Started</header>
+            <article>
+                <p>
+                    The easiest way to try out Vue.js is using the Hello World example. Feel free to open it in another
+                    tab and follow along as we go through some basic examples. Or, you can create an index.html file and
+                    include Vue with:
+                </p>
+                <code>
+                    &lt;!-- development version, includes helpful console warnings --&gt;
+                    &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;
+                </code>
+                <p>
+                    The Installation page provides more options of installing Vue. Note: We do not recommend that
+                    beginners start with vue-cli, especially if you are not yet familiar with Node.js-based build tools.
+                </p>
+                <p>
+                    If you prefer something more interactive, you can also check out this tutorial series on Scrimba,
+                    which gives you a mix of screencast and code playground that you can pause and play around with
+                    anytime.
+                </p>
+            </article>
+        </section>
+        <section class="main-section" id="Declarative_rendering">
+            <header>Declarative Rendering</header>
+            <article>
+                <p>
+                    At the core of Vue.js is a system that enables us to declaratively render data to the DOM using
+                    straightforward template syntax:
+                    <code>
+                        &lt;div id="app"&gt;
+                            {{ message }}
+                            &lt;/div&gt;
+                    </code>
+                    <code>
+                        var app = new Vue({
+                            el: '#app',
+                            data: {
+                              message: 'Hello Vue!'
+                            }
+                          })
+                    </code>
+                </p>
+                <p>
+                    We have already created our very first Vue app! This looks pretty similar to rendering a string
+                    template, but Vue has done a lot of work under the hood. The data and the DOM are now linked, and
+                    everything is now reactive. How do we know? Open your browser's JavaScript console (right now, on
+                    this page) and set app.message to a different value. You should see the rendered example above
+                    update accordingly.
+                </p>
+            </article>
+        </section>
+        <section class="main-section" id="Conditionals_and_loops">
+            <header>Conditionals and Loops</header>
+            <article>
+                <p>
+                    It's easy to toggle the presence of an element, too:
+                </p>
+                <code>
+                    &lt;div id="app-3"&gt;
+                    &lt;span v-if="seen"&gt;Now you see me&lt;/span&gt;
+                    &lt;/div&gt;
+                </code>
+                <code>
+                    var app3 = new Vue({
+                        el: '#app-3',
+                        data: {
+                          seen: true
+                        }
+                      })
+                </code>
+                <p>
+                    This example demonstrates that we can bind data to not only text and attributes, but also the
+                    structure of the DOM. Moreover, Vue also provides a powerful transition effect system that can
+                    automatically apply transition effects when elements are inserted/updated/removed by Vue.
+                </p>
+
+            </article>
+        </section>
+        <section class="main-section" id="Relation_to_custom_elements">
+            <header>Relation to Custom Elements</header>
+            <article>
+                <p>
+                    You may have noticed that Vue components are very similar to Custom Elements, which are part of the
+                    Web Components Spec. That's because Vue's component syntax is loosely modeled after the spec. For
+                    example, Vue components implement the Slot API and the is special attribute. However, there are a
+                    few key differences:
+                </p>
+                <ol>
+                    <li>
+                        The Web Components Spec has been finalized, but is not natively implemented in every browser.
+                        Safari 10.1+, Chrome 54+ and Firefox 63+ natively support web components. In comparison, Vue
+                        components don't require any polyfills and work consistently in all supported browsers (IE9 and
+                        above). When needed, Vue components can also be wrapped inside a native custom element.
+                    </li>
+                    <li>
+                        Vue components provide important features that are not available in plain custom elements, most
+                        notably cross-component data flow, custom event communication and build tool integrations.
+                    </li>
+                </ol>
+                <p>
+                    Although Vue doesn't use custom elements internally, it has great interoperability when it comes to
+                    consuming or distributing as custom elements. Vue CLI also supports building Vue components that
+                    register themselves as native custom elements.
+                </p>
+
+            </article>
+        </section>
+        <section class="main-section" id="Array_change_detection">
+            <header>Array Change Detection</header>
+            <article>
+                <p>
+                    Vue wraps an observed array's mutation methods so they will also trigger view updates. The wrapped
+                    methods are:
+                </p>
+                <ul>
+                    <li>push()</li>
+                    <li>pop()</li>
+                    <li>shift()</li>
+                    <li>unshift()</li>
+                    <li>splice()</li>
+                    <li>sort()</li>
+                    <li>reverse()</li>
+                </ul>
+                <p>
+                    You can open the console and play with the previous examples'<code>items</code> array by calling
+                    their mutation
+                    methods. For example: <code>example1.items.push({ message: 'Baz' })</code>.
+                </p>
+            </article>
+        </section>
+    </main>
+</body>
+
+</html>
